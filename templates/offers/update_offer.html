@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% load i18n %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content %}
+<form method="post">{% csrf_token %}
+    {% bootstrap_form form %}
+    <h5>{% trans 'Are you sure you want to update' %} "{{ object }}"?</h5>
+    <input class="btn btn-primary" type="submit" value="{% trans 'Yes, update' %}">
+</form>
+{% endblock %}

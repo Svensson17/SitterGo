@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% load i18n %}
+{% bootstrap_javascript jquery='full' %}
+{% block content %}
+<div>
+  <h3>Offers</h3>
+  <table class='table table-hover table-bordered'>
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+        <th scope="col">Title</th>
+      <th scope="col">Author</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for offer in offers %}
+      <tr>
+        <td>{{offer.id}}</td>
+        <td>{{offer.title}}</td>
+        <td>{{offer.author}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

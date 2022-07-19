@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% load i18n %}
+{% bootstrap_javascript jquery='full' %}
+{% block content %}
+<div>
+  <h3>My offers</h3>
+  <table class='table table-hover table-bordered'>
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+        <th scope="col">Title</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for my_offer in my_offers %}
+      <tr>
+        <td>{{my_offer.id}}</td>
+        <td>{{my_offer.title}}</td>
+          <td>{{my_offer.text}}</td>
+        <td>
+            <li class="nav-item"><a href="{% url 'update' my_offer.id %}" class="nav-link">Update Offer</a></li>
+        </td>
+          <td>
+            <li class="nav-item"><a href="{% url 'delete' my_offer.id %}" class="nav-link">Delete Offer</a></li>
+          </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
