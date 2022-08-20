@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% load i18n %}
+{% bootstrap_javascript jquery='full' %}
+{% block content %}
+<div>
+  <h3>My responds</h3>
+  <table class='table table-hover table-bordered'>
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+        <th scope="col">Email</th>
+        <th scope="col">Text</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for my_respond in my_responds %}
+      <tr>
+        <td>{{my_respond.id}}</td>
+          <td>{{my_respond.email}}</td>
+          <td>{{my_respond.text}}</td>
+        <td>
+            <a href="{% url 'update_respond' my_respond.id %}" class="nav-link">Update Respond</a>
+        </td>
+        <td>
+            <a href="{% url 'delete_respond' my_respond.id %}" class="nav-link">Delete Respond</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -20,10 +20,10 @@
         <td>{{my_offer.title}}</td>
           <td>{{my_offer.text}}</td>
         <td>
-            <li class="nav-item"><a href="{% url 'update' my_offer.id %}" class="nav-link">Update Offer</a></li>
+            <a href="{% url 'update' my_offer.id %}" class="nav-link">Update Offer</a>
         </td>
           <td>
-            <li class="nav-item"><a href="{% url 'delete' my_offer.id %}" class="nav-link">Delete Offer</a></li>
+            <a href="{% url 'delete' my_offer.id %}" class="nav-link">Delete Offer</a>
           </td>
       </tr>
     {% endfor %}

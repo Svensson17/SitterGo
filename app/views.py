@@ -1,11 +1,9 @@
-from django.contrib import messages
 from django.views.generic import TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView
-from app.forms import UserForm, OfferForm
-from app.models import Offer
-from django.shortcuts import redirect, render, get_object_or_404
-from django.urls import reverse, reverse_lazy
+from app.forms import OfferForm, RespondForm, UserEditForm, ProfileEditForm
+from app.models import Offer, Respond, Profile
+from django.urls import reverse
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -21,7 +19,7 @@ class AboutView(TemplateView):
 
 
 class CreateUser(SuccessMessageMixin, CreateView):
-    form_class = UserForm
+    form_class = UserEditForm
 
     def get_success_url(self):
         return reverse('index')
@@ -98,4 +96,95 @@ class UpdateOffer(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
 
     def get_success_url(self):
         return reverse('my_offers')
+
+
+class CreateRespond(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    # new_respond.post = offer
+    model = Respond
+    form_class = RespondForm
+    template_name = 'responds/create_respond.html'
+    success_message = 'Respond successfully created'
+
+    def form_valid(self, form):
+        offer_id = self.kwargs.get(self.pk_url_kwarg)
+        offer = Offer.objects.filter(pk=offer_id).first()
+        user = self.request.user
+        form.instance.offer = offer
+        form.instance.user = user
+        return super(CreateRespond, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('index')
+
+
+class UpdateRespond(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Respond
+    form_class = RespondForm
+    template_name = 'responds/update_respond.html'
+    success_message = 'Respond successfully updated'
+
+    def get_success_url(self):
+        return reverse('my_responds')
+
+
+class DeleteRespond(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    model = Respond
+    template_name = 'responds/delete_respond.html'
+    success_message = 'Respond successfully deleted'
+
+    def get_success_url(self):
+        return reverse('my_responds')
+
+
+class MyRespondList(ListView):
+    model = Respond
+    template_name = 'responds/my_responds.html'
+    context_object_name = 'my_responds'
+
+    def get_queryset(self):
+        user = self.request.user
+        return Respond.objects.filter(user=user)
+
+    def get_success_url(self):
+        return reverse('my_responds')
+
+
+class ProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Profile
+    template_name = 'profile/update_profile.html'
+    # context_object_name = 'user'
+    # queryset = UserProfile.objects.all()
+    form_class = ProfileEditForm
+
+    def get_success_url(self):
+        return reverse('index')
+
+    def get_object(self, queryset=None):
+        user_id = self.kwargs.get(self.pk_url_kwarg)
+        return Profile.objects.filter(user_id=user_id).first()
+
+    def get_context_data(self, **kwargs):
+        context = super(ProfileView, self).get_context_data(**kwargs)
+        user = self.request.user
+        context['form'] = ProfileEditForm(
+            instance=user.profile,
+            initial={
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+            'bio': user.bio}
+        )
+        return context
+
+    def form_valid(self, form):
+        from django.http import HttpResponseRedirect
+
+        profile = form.save()
+        user = profile.user
+        user.last_name = form.cleaned_data['last_name']
+        user.first_name = form.cleaned_data['first_name']
+        user.bio = form.cleaned_data['bio']
+        user.save()
+        return HttpResponseRedirect(self.get_success_url())
+
+
 

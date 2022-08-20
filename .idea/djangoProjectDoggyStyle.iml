@@ -24,6 +24,9 @@
         <option value="$MODULE_DIR$/templates" />
         <option value="$MODULE_DIR$/templates/registration" />
         <option value="$MODULE_DIR$/templates/offers" />
+        <option value="$MODULE_DIR$/templates/profile" />
+        <option value="$MODULE_DIR$/templates/responds" />
+        <option value="$MODULE_DIR$/template_copies" />
       </list>
     </option>
   </component>
