@@ -1,0 +1,10 @@
+asgiref @ file:///Users/user/Library/Caches/pypoetry/artifacts/cf/65/18/1451154a3ac6f8e749a6f7485ce77472fc1b339d4696f7a4cb816ac781/asgiref-3.5.2-py3-none-any.whl
+beautifulsoup4 @ file:///Users/user/Library/Caches/pypoetry/artifacts/5a/51/f6/ced036f2b2ef6b792e8138e7bd9584e5eac63a3d4481b6e62402d050c7/beautifulsoup4-4.11.1-py3-none-any.whl
+Django @ file:///Users/user/Library/Caches/pypoetry/artifacts/d2/e4/31/6dfa2a71237477f8885f83462c4ff96c5d73ed824bae1be3cf56ed81c1/Django-4.0.6-py3-none-any.whl
+django-bootstrap4 @ file:///Users/user/Library/Caches/pypoetry/artifacts/a8/66/b3/1219ba02fef2d3d2876a4c8f55dfdc5bc4f616137560abc03ba16f43c9/django_bootstrap4-22.1-py3-none-any.whl
+django-crispy-forms==1.14.0
+Pillow==9.2.0
+pystache @ file:///Users/user/Library/Caches/pypoetry/artifacts/b1/84/53/ccde61525286fa12e45e952e733941bdb4a35cf2c6e24bf50f099d9218/pystache-0.6.0.tar.gz
+soupsieve @ file:///Users/user/Library/Caches/pypoetry/artifacts/b7/15/27/3ba8eed3fabe07703423999fa8c50ba16ab30344fb2670163cb6510481/soupsieve-2.3.2.post1-py3-none-any.whl
+sqlparse @ file:///Users/user/Library/Caches/pypoetry/artifacts/ea/fd/ba/117a876397913faee210ef8bac93829e22ad9232662e656971383c0718/sqlparse-0.4.2-py3-none-any.whl
+static @ file:///Users/user/Library/Caches/pypoetry/artifacts/64/38/6a/ce8045f323f804b0eccab3e56a48c652ff3cfa64efe0dc6adf46eecc95/static-1.1.1.tar.gz
