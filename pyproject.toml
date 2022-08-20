@@ -9,6 +9,7 @@ python = "^3.9"
 Django = "^4.0.6"
 django-bootstrap4 = "^22.1"
 static = "^1.1.1"
+dj-config-url = "^0.1.1"
 
 [tool.poetry.dev-dependencies]
 
