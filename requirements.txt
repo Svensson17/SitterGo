@@ -1,12 +1,27 @@
-asgiref @ file:///Users/user/Library/Caches/pypoetry/artifacts/cf/65/18/1451154a3ac6f8e749a6f7485ce77472fc1b339d4696f7a4cb816ac781/asgiref-3.5.2-py3-none-any.whl
-beautifulsoup4 @ file:///Users/user/Library/Caches/pypoetry/artifacts/5a/51/f6/ced036f2b2ef6b792e8138e7bd9584e5eac63a3d4481b6e62402d050c7/beautifulsoup4-4.11.1-py3-none-any.whl
-dj-config-url @ file:///Users/user/Library/Caches/pypoetry/artifacts/df/d4/13/e4a8fff44aa6fd9e83f9614fd820e158d814226943ca3e900dcde6cd01/dj_config_url-0.1.1-py2.py3-none-any.whl
-Django @ file:///Users/user/Library/Caches/pypoetry/artifacts/d2/e4/31/6dfa2a71237477f8885f83462c4ff96c5d73ed824bae1be3cf56ed81c1/Django-4.0.6-py3-none-any.whl
-django-bootstrap4 @ file:///Users/user/Library/Caches/pypoetry/artifacts/a8/66/b3/1219ba02fef2d3d2876a4c8f55dfdc5bc4f616137560abc03ba16f43c9/django_bootstrap4-22.1-py3-none-any.whl
-django-crispy-forms==1.14.0
-gunicorn==20.1.0
-Pillow==9.2.0
-pystache @ file:///Users/user/Library/Caches/pypoetry/artifacts/b1/84/53/ccde61525286fa12e45e952e733941bdb4a35cf2c6e24bf50f099d9218/pystache-0.6.0.tar.gz
-soupsieve @ file:///Users/user/Library/Caches/pypoetry/artifacts/b7/15/27/3ba8eed3fabe07703423999fa8c50ba16ab30344fb2670163cb6510481/soupsieve-2.3.2.post1-py3-none-any.whl
-sqlparse @ file:///Users/user/Library/Caches/pypoetry/artifacts/ea/fd/ba/117a876397913faee210ef8bac93829e22ad9232662e656971383c0718/sqlparse-0.4.2-py3-none-any.whl
-static @ file:///Users/user/Library/Caches/pypoetry/artifacts/64/38/6a/ce8045f323f804b0eccab3e56a48c652ff3cfa64efe0dc6adf46eecc95/static-1.1.1.tar.gz
+asgiref==3.5.2; python_version >= "3.8" \
+    --hash=sha256:1d2880b792ae8757289136f1db2b7b99100ce959b2aa57fd69dab783d05afac4 \
+    --hash=sha256:4a29362a6acebe09bf1d6640db38c1dc3d9217c68e6f9f6204d72667fc19a424
+beautifulsoup4==4.11.1; python_full_version >= "3.6.0" and python_version >= "3.7" \
+    --hash=sha256:58d5c3d29f5a36ffeb94f02f0d786cd53014cf9b3b3951d42e0080d8a9498d30 \
+    --hash=sha256:ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693
+dj-config-url==0.1.1
+django-bootstrap4==22.1; python_version >= "3.7" \
+    --hash=sha256:fc9984f7238fbcd330ec5111bf0435083caa7192b022eedd53bfa4128bee318f \
+    --hash=sha256:b6da4cb54682012ff8baa1a1e672ba30cbfae82fb3d74f4b341109074e8e239f
+django==4.0.6; python_version >= "3.8" \
+    --hash=sha256:ca54ebedfcbc60d191391efbf02ba68fb52165b8bf6ccd6fe71f098cac1fe59e \
+    --hash=sha256:a67a793ff6827fd373555537dca0da293a63a316fe34cb7f367f898ccca3c3ae
+gunicorn==20.1.0; python_version >= "3.5" \
+    --hash=sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e \
+    --hash=sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8
+pystache==0.6.0; python_version >= "3.6"
+soupsieve==2.3.2.post1; python_full_version >= "3.6.0" and python_version >= "3.7" \
+    --hash=sha256:3b2503d3c7084a42b1ebd08116e5f81aadfaea95863628c80a3b774a11b7c759 \
+    --hash=sha256:fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d
+sqlparse==0.4.2; python_version >= "3.8" \
+    --hash=sha256:48719e356bb8b42991bdbb1e8b83223757b93789c00910a616a071910ca4a64d \
+    --hash=sha256:0c00730c74263a94e5a9919ade150dfc3b19c574389985446148402998287dae
+static==1.1.1
+tzdata==2022.1; sys_platform == "win32" and python_version >= "3.8" \
+    --hash=sha256:238e70234214138ed7b4e8a0fab0e5e13872edab3be586ab8198c407620e2ab9 \
+    --hash=sha256:8b536a8ec63dc0751342b3984193a3118f8fca2afe25752bb9b7fffd398552d3
