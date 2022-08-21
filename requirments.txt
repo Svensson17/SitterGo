@@ -1,5 +1,6 @@
 asgiref @ file:///Users/user/Library/Caches/pypoetry/artifacts/cf/65/18/1451154a3ac6f8e749a6f7485ce77472fc1b339d4696f7a4cb816ac781/asgiref-3.5.2-py3-none-any.whl
 beautifulsoup4 @ file:///Users/user/Library/Caches/pypoetry/artifacts/5a/51/f6/ced036f2b2ef6b792e8138e7bd9584e5eac63a3d4481b6e62402d050c7/beautifulsoup4-4.11.1-py3-none-any.whl
+dj-config-url @ file:///Users/user/Library/Caches/pypoetry/artifacts/df/d4/13/e4a8fff44aa6fd9e83f9614fd820e158d814226943ca3e900dcde6cd01/dj_config_url-0.1.1-py2.py3-none-any.whl
 Django @ file:///Users/user/Library/Caches/pypoetry/artifacts/d2/e4/31/6dfa2a71237477f8885f83462c4ff96c5d73ed824bae1be3cf56ed81c1/Django-4.0.6-py3-none-any.whl
 django-bootstrap4 @ file:///Users/user/Library/Caches/pypoetry/artifacts/a8/66/b3/1219ba02fef2d3d2876a4c8f55dfdc5bc4f616137560abc03ba16f43c9/django_bootstrap4-22.1-py3-none-any.whl
 django-crispy-forms==1.14.0
