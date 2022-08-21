@@ -4,6 +4,7 @@ dj-config-url @ file:///Users/user/Library/Caches/pypoetry/artifacts/df/d4/13/e4
 Django @ file:///Users/user/Library/Caches/pypoetry/artifacts/d2/e4/31/6dfa2a71237477f8885f83462c4ff96c5d73ed824bae1be3cf56ed81c1/Django-4.0.6-py3-none-any.whl
 django-bootstrap4 @ file:///Users/user/Library/Caches/pypoetry/artifacts/a8/66/b3/1219ba02fef2d3d2876a4c8f55dfdc5bc4f616137560abc03ba16f43c9/django_bootstrap4-22.1-py3-none-any.whl
 django-crispy-forms==1.14.0
+gunicorn==20.1.0
 Pillow==9.2.0
 pystache @ file:///Users/user/Library/Caches/pypoetry/artifacts/b1/84/53/ccde61525286fa12e45e952e733941bdb4a35cf2c6e24bf50f099d9218/pystache-0.6.0.tar.gz
 soupsieve @ file:///Users/user/Library/Caches/pypoetry/artifacts/b7/15/27/3ba8eed3fabe07703423999fa8c50ba16ab30344fb2670163cb6510481/soupsieve-2.3.2.post1-py3-none-any.whl
