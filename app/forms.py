@@ -1,13 +1,27 @@
-from app.models import Offer, Respond, Profile, User
+from app.models import Offer, Respond, Profile
 from django.forms import ModelForm, CharField, widgets, ImageField
 from string import Template
 from django.utils.safestring import mark_safe
+from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 
 
-class UserEditForm(ModelForm):
+class UserForm(UserCreationForm):
     class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'email')
+        model = get_user_model()
+        fields = [
+            'first_name',
+            'last_name',
+            'username',
+            'email',
+            'password1',
+            'password2'
+        ]
+
+# class UserEditForm(ModelForm):
+#     class Meta:
+#         model = User
+#         fields = ('first_name', 'last_name', 'email')
 
 
 class PictureWidget(widgets.Widget):

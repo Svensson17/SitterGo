@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView
-from app.forms import OfferForm, RespondForm, UserEditForm, ProfileEditForm
+from app.forms import OfferForm, RespondForm, UserForm, ProfileEditForm, UserForm
 from app.models import Offer, Respond, Profile
 from django.urls import reverse
 from django.contrib.auth.views import LoginView, LogoutView
@@ -19,7 +19,7 @@ class AboutView(TemplateView):
 
 
 class CreateUser(SuccessMessageMixin, CreateView):
-    form_class = UserEditForm
+    form_class = UserForm
 
     def get_success_url(self):
         return reverse('index')
