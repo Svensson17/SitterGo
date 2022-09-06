@@ -20,7 +20,9 @@ from django.urls import include, path
 from django.conf.urls.static import static
 from djangoProjectDoggyStyle import settings
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app.urls')),
+    path('', include('app.api.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

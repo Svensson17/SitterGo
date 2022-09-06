@@ -1,13 +1,18 @@
 from django.views.generic import TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView
-from app.forms import OfferForm, RespondForm, UserForm, ProfileEditForm, UserForm
-from app.models import Offer, Respond, Profile
+from app.forms import OfferForm, RespondForm, ProfileEditForm, UserForm
+from app.models import Offer, Respond, Profile, User
 from django.urls import reverse
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DeleteView, UpdateView
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.forms import model_to_dict
+from rest_framework import viewsets, permissions
+from app.serializers import UserSerializer
 
 
 class IndexView(TemplateView):
@@ -20,6 +25,11 @@ class AboutView(TemplateView):
 
 class CreateUser(SuccessMessageMixin, CreateView):
     form_class = UserForm
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        profile = Profile.objects.create(user=self.object)
+        return response
 
     def get_success_url(self):
         return reverse('index')
@@ -163,21 +173,20 @@ class ProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         user_id = self.kwargs.get(self.pk_url_kwarg)
         return Profile.objects.filter(user_id=user_id).first()
 
-    def get_context_data(self, **kwargs):
-        context = super(ProfileView, self).get_context_data(**kwargs)
-        user = self.request.user
-        context['form'] = ProfileEditForm(
-            instance=user.profile,
-            initial={
-                'first_name': user.first_name,
-                'last_name': user.last_name,
-            'bio': user.bio}
-        )
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super(ProfileView, self).get_context_data(**kwargs)
+    #     user = self.request.user
+    #     context['form'] = ProfileEditForm(
+    #         instance=user.profile,
+    #         initial={
+    #             'first_name': user.first_name,
+    #             'last_name': user.last_name,
+    #             'bio': user.bio}
+    #     )
+    #     return context
 
     def form_valid(self, form):
         from django.http import HttpResponseRedirect
-
         profile = form.save()
         user = profile.user
         user.last_name = form.cleaned_data['last_name']
@@ -185,6 +194,3 @@ class ProfileView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         user.bio = form.cleaned_data['bio']
         user.save()
         return HttpResponseRedirect(self.get_success_url())
-
-
-

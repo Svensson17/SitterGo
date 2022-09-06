@@ -4,7 +4,7 @@ from string import Template
 from django.utils.safestring import mark_safe
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
-
+from django.forms.widgets import ClearableFileInput
 
 class UserForm(UserCreationForm):
     class Meta:
@@ -18,20 +18,18 @@ class UserForm(UserCreationForm):
             'password2'
         ]
 
-# class UserEditForm(ModelForm):
-#     class Meta:
-#         model = User
-#         fields = ('first_name', 'last_name', 'email')
 
-
-class PictureWidget(widgets.Widget):
+class PictureWidget(ClearableFileInput):
     def render(self, name, value, attrs=None, **kwargs):
+        if not value:
+            return super().render(name, value, attrs, **kwargs)
         html = Template("""<img src="$link"/>""")
         return mark_safe(html.substitute(link=value.url))
 
 
 class ProfileEditForm(ModelForm):
-    photo = ImageField(widget=PictureWidget)
+    # photo = ImageField(widget=PictureWidget)
+    # photo = ImageField(required=False)
     first_name = CharField(max_length=32)
     last_name = CharField(max_length=32)
     bio = CharField(max_length=32)
