@@ -37,7 +37,6 @@ class RespondPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Respond
         fields = ('name', 'text', 'user', 'offer')
-        # depth = 1
 
 
 class ProfileGetSerializer(serializers.ModelSerializer):
@@ -74,4 +73,3 @@ class ProfilePostSerializer(serializers.ModelSerializer):
         instance.save()
 
         return instance
-
